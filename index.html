@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- All necessary meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="A simple site for practicing the CRUDS Operations using JavaScript">
+    <meta name="keywords" content="HTML, CSS, JavaScript, Bootstrap, CRUDS, Fontawesome, JQuery">
+    <meta name="author" content="Gerges Adel">
+    <meta name="robots" content="index, follow">
+
+    <!-- Site Icon -->
+    <link rel="icon" href="assets/images/faveicon128.png">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/libs/bootstrap-5.2.1/css/bootstrap.min.css">
+
+    <!-- FontAwesome CSS -->
+    <link rel="stylesheet" href="assets/libs/fontawesome-6.2.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/dist/css/style.css">
+
+    <!-- Title -->
+    <title>CRUDS Operations</title>
+</head>
+
+<body>
+
+    <!-- Lodaing Overlay [Start] -->
+    <div class="loading-overlay" id="loading-overlay">
+        <div class="loading-overlay-content">
+            <div id="spinner-border">
+                <img src="assets/images/faveicon128.png" width="64" alt="Loading..." class="spinner">
+            </div>
+        </div>
+    </div>
+    <!-- Lodaing Overlay [End] -->
+
+    <!-- Navbar [Start] -->
+    <nav class="fixed-top shadow py-2 bg-primary">
+        <div class="container">
+            <div class="d-flex flex-row align-items-center justify-content-center">
+                <p class="navbar-brand me-auto m-0 px-3 py-1 rounded-pill text-light" title="CRUDS App"><span></span>
+                </p>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <span class="badge rounded-pill text-bg-light px-3 py-2" title="Live Clock">
+                            <span id="time" title="Time">xx:xx:xx xx</span>
+                            <span class="mx-1"></span>
+                            <span id="day" title="Date">xx/xx/xxxx</span>
+                        </span>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar [End] -->
+
+    <!-- Intro [Start] -->
+    <section id="intro" class="intro pt-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="intro-content text-lg-center">
+                        <h1 class="fw-bold h1" title="Cruds Operations">CRUDS Operations</h1>
+                        <p class="lead" title="Paragraph">A simple site for practicing the CRUDS Operations using
+                            JavaScript</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Intro [End] -->
+
+    <!-- Form [Start] -->
+    <main class="py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="card rounded-0">
+                        <div class="card-header rounded-0 text-center bg-light">
+                            <h5 class="card-title fw-bold m-0" title="Form"><span id="operatin"></span> Form</h5>
+                        </div>
+                        <div class="card-body rounded-0">
+
+                            <div class="row g-3">
+                                <div class="col-lg-8">
+                                    <label for="productName" class="form-label" title="Product Name">Product
+                                        Name</label>
+                                    <input type="text" class="form-control" id="productName"
+                                        placeholder="IPhone 11 pro max" title="Name Input">
+                                    <div id="productNameValidation" class="invalid-feedback">
+                                        Product name must be 3 to 30 characters (letters only).
+                                    </div>
+                                    <div class="valid-feedback">
+                                        Product name is valid.
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <label for="productPrice" class="form-label" title="Product Price">Product
+                                        Price</label>
+                                    <input type="number" class="form-control" id="productPrice" placeholder="$499"
+                                        title="Price Input">
+                                    <div id="productPriceValidation" class="invalid-feedback">
+                                        Product price must be 1 to 9 digits (numbers only).
+                                    </div>
+                                    <div class="valid-feedback">
+                                        Product price is valid.
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <label for="productCategory" class="form-label" title="Product Category">Product
+                                        Category</label>
+                                    <input type="text" class="form-control" id="productCategory"
+                                        placeholder="Smart Phones" title="Category Input">
+                                    <div id="productCategoryValidation" class="invalid-feedback">
+                                        Product category must be 3 to 30 characters (letters only).
+                                    </div>
+                                    <div class="valid-feedback">
+                                        Product category is valid.
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <label for="productDescription" class="form-label"
+                                        title="Product Description">Product
+                                        Description</label>
+                                    <textarea class="form-control" id="productDescription" rows="4"
+                                        placeholder="Apple iPhone 11 Pro Max, 64GB, Space Gray - Unlocked (Renewed)"
+                                        title="Description Input"></textarea>
+                                    <div id="productDescriptionValidation" class="invalid-feedback">
+                                        Product description must be 3 to 255 characters (letters and numbers only).
+                                    </div>
+                                    <div class="valid-feedback">
+                                        Product description is valid.
+                                    </div>
+                                </div>
+                                <div class="col-12 text-end">
+                                    <button type="submit" class="btn btn-primary" id="mainBtn"
+                                        title="Add product">Add</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- Form [End] -->
+
+    <!-- Table [Start] -->
+    <section id="table" class="table py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <input class="form-control" id="searchByName" title="Search Input" type="search"
+                        placeholder="Search By Name">
+                </div>
+                <div class="col-12">
+                    <div class="table-responsive">
+                        <table class="table table-striped table-hover table-bordered align-middle">
+                            <thead>
+                                <tr>
+                                    <th scope="col" class="text-center">#</th>
+                                    <th scope="col">Product Name</th>
+                                    <th scope="col">Product Price</th>
+                                    <th scope="col">Product Category</th>
+                                    <th scope="col">Product Description</th>
+                                    <th scope="col" class="text-center">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tableBody">
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Table [End] -->
+
+    <!-- Bootstrap JS -->
+    <script src="assets/libs/bootstrap-5.2.1/js/bootstrap.bundle.min.js"></script>
+
+    <!-- JQuery JS -->
+    <script src="assets/libs/jquery-3.6.1/jquery-3.6.1.min.js"></script>
+
+    <!-- FontAwesome JS -->
+    <script src="assets/libs/fontawesome-6.2.0/js/all.min.js"></script>
+
+    <!-- Date-Time JS -->
+    <script src="assets/dist/js/dateTime.js"></script>
+
+    <!-- Custom JS -->
+    <script src="assets/dist/js/script.js"></script>
+
+    <!-- Overlay JS -->
+    <script src="assets/dist/js/overlay.js"></script>
+
+</body>
+
+</html>

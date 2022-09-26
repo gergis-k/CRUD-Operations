@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+.icon::before {
+    display: inline-block;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* 
+.login::before {
+    font: var(--fa-font-solid);
+    content: "\f007";
+}
+*/
+
+/* ---------------------------------------- */
+
+
+/* loading-overlay */
+
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading-overlay .spinner {
+    animation: spin 1.5s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* ---------------------------------------- */
+
+/* navbar section */
+.navbar-brand {
+    font-weight: 900;
+    font-size: 1.375rem;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: border 0.2s ease-in-out;
+}
+
+.navbar-brand::before {
+    content: "CRUDS";
+}
+
+.navbar-brand span::before {
+    content: " App";
+}
+
+.navbar-brand:focus,
+.navbar-brand:hover,
+.navbar-brand:active {
+    border: 1px solid #fff;
+}
+
+/* ---------------------------------------- */
+
+/* intro */
+
+.intro {
+    margin-top: 59px;
+}
+
+/* ---------------------------------------- */
+
+/* table */
+
+.table .update::before {
+    font: var(--fa-font-solid);
+    content: "\f044";
+}
+
+.table .delete::before {
+    font: var(--fa-font-solid);
+    content: "\f2ed";
+}
