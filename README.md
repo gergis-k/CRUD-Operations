@@ -1,2 +1,2 @@
-# CRUDS-Operations
- A simple site for practicing the CRUDS Operations using JavaScript
+# CRUD-Operations
+ A simple site for practicing the CRUD Operations using JavaScript
